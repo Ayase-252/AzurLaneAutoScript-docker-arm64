@@ -1,0 +1,20 @@
+# docker run -v ${PWD}:/app/AzurLaneAutoScript --network host --name alas -it littlemio/alas:latest
+# or
+# docker run -v /path/to/dir:/app/AzurLaneAutoScript --network host --name alas -it littlemio/alas:latest
+
+version: '3.7'
+
+services:
+  ALAS:
+    build:
+      context: ./
+    container_name: ALAS
+    image: littlemio/alas:latest
+    restart: unless-stopped
+    volumes:
+      # Change "/path/to/dir" to the path of the AzurLaneAutoScript project.
+      - /path/to/dir:/app/AzurLaneAutoScript
+    # If you need to connect a device via ADB USB, uncomment the following two lines
+    #   - /dev/bus/usb:/dev/bus/usb
+    # privileged: true
+    network_mode: host
