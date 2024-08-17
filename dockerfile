@@ -7,8 +7,9 @@ SHELL ["/bin/bash", "-c"]
 
 WORKDIR /app
 
-ENV PYROOT=/app/python37 \
- LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${PYROOT}/mxnet/" \
+ENV PYROOT=/app/python37
+
+ENV LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${PYROOT}/mxnet/" \
  PATH="${PATH}:/opt/platform-tools:${HOME}/.cargo/bin"
 
 COPY ./requirements.txt ./mxnet-1.9.1-py3-none-any.whl /app/
