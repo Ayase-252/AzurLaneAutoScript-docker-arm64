@@ -2,7 +2,7 @@
 
 ## 简介
 
-本项目为 [AzurLaneAutoScript](https://github.com/LmeSzinc/AzurLaneAutoScript) 的 Docker 版本，适配了 ARM64 架构。旨在提供一个方便的环境来运行 AzurLaneAutoScript，特别是在 ARM64 设备上，如 NanoPi R5S 4G。
+本项目为 [AzurLaneAutoScript](https://github.com/LmeSzinc/AzurLaneAutoScript) 的 Docker 版本，适配了 ARM64 架构。旨在提供一个方便的环境来运行 AzurLaneAutoScript，特别是在 ARM64 设备上。
 
 ## 须知
 
