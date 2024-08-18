@@ -1,6 +1,6 @@
-# docker run -v ${PWD}:/app/AzurLaneAutoScript --network host --name alas -it littlemio/alas:latest
+# docker run -v ${PWD}:/app/AzurLaneAutoScript --network host --name ALAS -e TZ=Asia/Shanghai  -it littlemio/alas:latest
 # or
-# docker run -v /path/to/dir:/app/AzurLaneAutoScript --network host --name alas -it littlemio/alas:latest
+# docker run -v /path/to/dir:/app/AzurLaneAutoScript --network host --name ALAS -e TZ=Asia/Shanghai -it littlemio/alas:latest
 
 version: '3.7'
 
@@ -11,6 +11,8 @@ services:
     container_name: ALAS
     image: littlemio/alas:latest
     restart: unless-stopped
+    environment:
+      - TZ=Asia/Shanghai
     volumes:
       # Change "/path/to/dir" to the path of the AzurLaneAutoScript project.
       - /path/to/dir:/app/AzurLaneAutoScript
