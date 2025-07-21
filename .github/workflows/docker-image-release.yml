@@ -34,22 +34,7 @@ jobs:
           context: .
           platforms: |
             linux/arm64
-          push: false
+          push: true
           tags: |
             ${{ env.DOCKERHUB_REPO }}:${{ env.APP_VERSION }}
             ${{ env.DOCKERHUB_REPO }}:latest
-
-      - name: DockerSlim - Minify image and push
-        id: slim
-        uses: kitabisa/docker-slim-action@v1
-        env:
-          DSLIM_HTTP_PROBE: false
-        with:
-          target: ${{ env.DOCKERHUB_REPO }}:latest
-          tag: latest-slim
-
-      - run: docker image push "${{ env.DOCKERHUB_REPO }}" --all-tags
-
-      - run: echo "${REPORT}"
-        env:
-          REPORT: ${{ steps.slim.outputs.report }}
