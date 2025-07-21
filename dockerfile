@@ -51,12 +51,12 @@ ENV PATH="${PATH}:${PYROOT}/bin:/opt/platform-tools" \
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-        git \
         libopenblas0 \
         libopenblas-pthread-dev \
         libopencv-core406 \
         libopencv-imgproc406 \
         libopencv-imgcodecs406 \
+        ca-certificates \
         openssl \
         git && \
     ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo "$TZ" > /etc/timezone \
