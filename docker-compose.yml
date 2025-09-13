@@ -15,7 +15,7 @@ services:
       - TZ=Asia/Shanghai
     volumes:
       # Change "/path/to/dir" to the path of the AzurLaneAutoScript project.
-      - /path/to/dir:/app/AzurLaneAutoScript
+      - ./AzurLaneAutoScript:/app/AzurLaneAutoScript
     # If you need to connect a device via ADB USB, uncomment the following two lines
     #   - /dev/bus/usb:/dev/bus/usb
     # privileged: true
